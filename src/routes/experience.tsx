@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import styles from './experience.module.css'
 
@@ -37,6 +38,12 @@ const EXPERIENCES = [
 ]
 
 function ExperiencePage() {
+  const [openIdx, setOpenIdx] = useState<number | null>(null)
+
+  const toggle = (idx: number) => {
+    setOpenIdx((prev) => (prev === idx ? null : idx))
+  }
+
   return (
     <div className={styles.page}>
       <div className={styles.header}>
@@ -62,8 +69,38 @@ function ExperiencePage() {
         ))}
       </div>
 
-      {/* Mobile: accordion — added in Task 6 */}
-      <div className={styles.mobileEntries} />
+      {/* Mobile: accordion */}
+      <div className={styles.mobileEntries}>
+        {EXPERIENCES.map((exp, idx) => {
+          const isOpen = openIdx === idx
+          return (
+            <div key={exp.company} className={styles.mobileEntry}>
+              <div
+                className={`${styles.mobileTop} ${isOpen ? styles.open : ''}`}
+              >
+                <div className={styles.mobileTopRow}>
+                  <p className={styles.mobileCompany}>{exp.company}</p>
+                  <button
+                    className={styles.mobileToggle}
+                    onClick={() => toggle(idx)}
+                    aria-expanded={isOpen}
+                    aria-label={`${isOpen ? 'Collapse' : 'Expand'} ${exp.company}`}
+                  >
+                    {isOpen ? '[-]' : '[+]'}
+                  </button>
+                </div>
+                <p className={styles.mobileDates}>{exp.dates}</p>
+              </div>
+              {isOpen && (
+                <div className={styles.mobileExpanded}>
+                  <p className={styles.mobileTitle}>{exp.title}</p>
+                  <p className={styles.mobileDescription}>{exp.description}</p>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
