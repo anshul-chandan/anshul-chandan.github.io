@@ -40,7 +40,7 @@ function ExperiencePage() {
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <p className={styles.heading}>EXPERIENCE</p>
+        <h1 className={styles.heading}>EXPERIENCE</h1>
         <Link to="/" className={styles.homeLink}>
           [home]
         </Link>
