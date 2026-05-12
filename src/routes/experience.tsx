@@ -76,7 +76,7 @@ function ExperiencePage() {
           return (
             <div key={exp.company} className={styles.mobileEntry}>
               <div
-                className={`${styles.mobileTop} ${isOpen ? styles.open : ''}`}
+                className={[styles.mobileTop, isOpen && styles.open].filter(Boolean).join(' ')}
               >
                 <div className={styles.mobileTopRow}>
                   <p className={styles.mobileCompany}>{exp.company}</p>
