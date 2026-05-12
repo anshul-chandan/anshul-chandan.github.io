@@ -1,0 +1,195 @@
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+/* ── Header ────────────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.heading {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 1;
+  margin: 0;
+  font-variation-settings: 'opsz' 40;
+}
+
+.homeLink {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+/* ── Desktop entry list ─────────────────────────── */
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 10px;
+}
+
+.entry {
+  display: flex;
+  gap: 0;
+}
+
+.entryLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.company {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 36px;
+  font-variation-settings: 'opsz' 9;
+  margin: 0;
+}
+
+.dates {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+  margin: 0;
+}
+
+.entryRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 36px;
+  font-variation-settings: 'opsz' 14;
+  margin: 0;
+}
+
+.description {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+  margin: 0;
+}
+
+/* ── Mobile accordion (hidden on desktop) ────────── */
+
+.mobileEntries {
+  display: none;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 48px;
+  }
+
+  .homeLink {
+    font-size: 20px;
+  }
+
+  .entries {
+    display: none;
+  }
+
+  .mobileEntries {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  /* Mobile entry */
+  .mobileEntry {
+    padding: 10px;
+  }
+
+  .mobileTop {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .mobileTop.open {
+    border: 3px solid var(--fg);
+  }
+
+  .mobileTopRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobileCompany {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 24px;
+    font-variation-settings: 'opsz' 9;
+    flex: 1;
+    margin: 0;
+  }
+
+  .mobileToggle {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 24px;
+    font-variation-settings: 'opsz' 9;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--fg);
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  .mobileDates {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .mobileExpanded {
+    background: var(--fg);
+    color: var(--bg);
+    padding: 10px;
+  }
+
+  .mobileTitle {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 24px;
+    font-variation-settings: 'opsz' 14;
+    margin: 0;
+  }
+
+  .mobileDescription {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;
+  }
+}
