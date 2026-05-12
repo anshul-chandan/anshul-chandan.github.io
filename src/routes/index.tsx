@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <p className={styles.name}>ANSHUL CHANDAN</p>
+        <h1 className={styles.name}>ANSHUL CHANDAN</h1>
         <p className={styles.subtitle}>
           software engineer professional - photography hobbyist - nyc based
         </p>
