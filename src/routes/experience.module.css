@@ -44,49 +44,6 @@
   align-self: stretch;
 }
 
-.entry {
-  display: flex;
-  padding: var(--spacing-sm);
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.entryLeft {
-  flex: 1 0 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.company {
-  font-weight: 400;
-  font-size: var(--font-size-company);
-  font-variation-settings: 'opsz' 9;
-}
-
-.dates {
-  font-family: var(--font-mono);
-  font-weight: 300;
-  font-size: var(--font-size-body);
-}
-
-.entryRight {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-  font-weight: 400;
-  font-size: var(--font-size-company);
-  font-variation-settings: 'opsz' 14;
-}
-
-.description {
-  font-family: var(--font-mono);
-  font-weight: 300;
-  font-size: var(--font-size-body);
-}
-
 /* ── Mobile accordion (hidden on desktop) ────────── */
 
 .mobileEntries {
@@ -113,71 +70,5 @@
     flex-direction: column;
     align-self: stretch;
     justify-content: center;
-  }
-
-  /* Mobile entry */
-  .mobileEntry {
-    padding: var(--spacing-xs);
-  }
-
-  .mobileTop {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-    padding: var(--spacing-xs);
-  }
-
-  .mobileTop.open {
-    outline: var(--border-width) solid var(--fg);
-  }
-
-  .mobileTopRow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .mobileCompany {
-    font-weight: 400;
-    font-size: var(--font-size-body);
-    font-variation-settings: 'opsz' 9;
-    flex: 1;
-  }
-
-  .mobileToggle {
-    font-weight: 400;
-    font-size: var(--font-size-body);
-    font-variation-settings: 'opsz' 9;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--fg);
-    padding: 0;
-    white-space: nowrap;
-  }
-
-  .mobileDates {
-    font-family: var(--font-mono);
-    font-weight: 300;
-    font-size: var(--font-size-body-sm);
-  }
-
-  .mobileExpanded {
-    background: var(--fg);
-    color: var(--bg);
-    padding: var(--spacing-xs);
-    outline: var(--border-width) solid var(--fg);
-  }
-
-  .mobileTitle {
-    font-weight: 400;
-    font-size: var(--font-size-body);
-    font-variation-settings: 'opsz' 14;
-  }
-
-  .mobileDescription {
-    font-family: var(--font-mono);
-    font-weight: 300;
-    font-size: var(--font-size-body-sm);
   }
 }

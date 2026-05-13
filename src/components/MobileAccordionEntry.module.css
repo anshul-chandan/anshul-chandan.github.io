@@ -1,0 +1,64 @@
+.mobileEntry {
+  padding: var(--spacing-xs);
+}
+
+.mobileTop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs);
+}
+
+.mobileTop.open {
+  outline: var(--border-width) solid var(--fg);
+}
+
+.mobileTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobileCompany {
+  font-weight: 400;
+  font-size: var(--font-size-body);
+  font-variation-settings: 'opsz' 9;
+  flex: 1;
+}
+
+.mobileToggle {
+  font-family: var(--font-mono);
+  font-weight: 375;
+  font-size: var(--font-size-body);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--fg);
+  padding: 0;
+  white-space: nowrap;
+}
+
+.mobileDates {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: var(--font-size-body-sm);
+}
+
+.mobileExpanded {
+  background: var(--fg);
+  color: var(--bg);
+  padding: var(--spacing-xs);
+  outline: var(--border-width) solid var(--fg);
+}
+
+.mobileTitle {
+  font-weight: 400;
+  font-size: var(--font-size-body);
+  font-variation-settings: 'opsz' 14;
+}
+
+.mobileDescription {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: var(--font-size-body-sm);
+}
