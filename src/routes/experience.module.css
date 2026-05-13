@@ -32,6 +32,10 @@
   white-space: nowrap;
 }
 
+.homeLink:hover {
+  text-decoration: underline;
+}
+
 /* ── Desktop entry list ─────────────────────────── */
 
 .entries {

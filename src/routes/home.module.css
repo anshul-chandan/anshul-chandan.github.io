@@ -56,6 +56,11 @@
   line-height: 2;
   font-variation-settings: 'opsz' 9;
   align-self: stretch;
+  padding: 0 0.625rem;
+}
+
+.navLink:hover {
+  outline: 3px solid var(--fg);
 }
 
 .mobileName {
