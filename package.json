@@ -2,7 +2,7 @@
   "name": "anshul-chandan",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://anshul-chandan.github.io/react-gh-pages",
+  "homepage": "https://anshul-chandan.github.io",
   "type": "module",
   "scripts": {
     "dev": "vite",

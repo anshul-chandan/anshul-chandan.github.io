@@ -4,7 +4,6 @@ import babel from "@rolldown/plugin-babel";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 
 export default defineConfig({
-  base: "/react-gh-pages/",
   plugins: [
     tanstackRouter({
       target: "react",
