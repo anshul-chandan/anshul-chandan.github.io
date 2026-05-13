@@ -2,30 +2,39 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  align-self: stretch;
 }
 
 .name {
   font-family: var(--font-sans);
   font-weight: 900;
   font-size: clamp(70px, 10.4vw, 180px);
+  font-style: normal;
   line-height: 1;
   margin: 0;
   font-variation-settings: 'opsz' 40;
+  text-align: center;
+  align-self: stretch;
+  flex: 1 0 0;
 }
 
 .subtitle {
   font-family: var(--font-mono);
   font-weight: 300;
   font-style: normal;
-  font-size: 32px;
+  font-size: clamp(1rem, 2.2vw, 2rem);
   line-height: 1.22;
+  text-align: center;
+  align-self: stretch;
 }
 
 .navArea {
@@ -38,26 +47,79 @@
 .nav {
   display: flex;
   flex-direction: column;
-  min-width: 280px;
 }
 
 .navLink {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: clamp(36px, 4vw, 60px);
+  font-size: clamp(2.25rem, 3vw, 3.75rem);
   line-height: 2;
   font-variation-settings: 'opsz' 9;
+  align-self: stretch;
+}
+
+.mobileName {
+  display: none;
+}
+
+.mobileSubtitle {
+  display: none;
 }
 
 @media (max-width: 768px) {
+  .name {
+    display: none;
+  }
+
   .subtitle {
-    font-size: 20px;
+    display: none;
+  }
+
+  .page {
+    padding: 0.625rem;
+    gap: 0.625rem;
+  }
+
+  .header {
+    display: flex;
+    padding: 0 1.25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+  .mobileName {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0;
+    font-variation-settings: 'opsz' 40;
+  }
+
+  .mobileSubtitle {
+    display: block;
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 1.22;
+    text-align: left;
   }
 
   .navArea {
-    justify-content: flex-start;
+    display: flex;
+    padding: 0 1.25rem;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: flex-start;
-    margin-top: 40px;
+    flex: 1 0 0;
+    align-self: stretch;
   }
 
   .navLink {
