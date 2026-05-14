@@ -110,7 +110,7 @@
   }
 
   .navArea {
-    padding: 0 var(--spacing-sm);
+    padding: 0 var(--spacing-xs);
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
