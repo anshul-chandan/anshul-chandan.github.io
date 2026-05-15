@@ -18,12 +18,15 @@ export const MobileAccordionEntry = memo(function MobileAccordionEntry({
     isOpen,
     onToggle,
 }: Props) {
+    const id = company.toLowerCase().replace(/\s+/g, '-')
     return (
-        <div className={styles.mobileEntry}>
+        <article className={styles.mobileEntry}>
             <div className={[styles.mobileTop, isOpen && styles.open].filter(Boolean).join(' ')}>
                 <div className={styles.mobileTopRow}>
-                    <p className={styles.mobileCompany}>{company}</p>
+                    <h2 className={styles.mobileCompany}>{company}</h2>
                     <button
+                        id={`trigger-${id}`}
+                        aria-controls={`content-${id}`}
                         className={styles.mobileToggle}
                         onClick={onToggle}
                         aria-expanded={isOpen}
@@ -35,11 +38,16 @@ export const MobileAccordionEntry = memo(function MobileAccordionEntry({
                 <p className={styles.mobileDates}>{dates}</p>
             </div>
             {isOpen && (
-                <div className={styles.mobileExpanded}>
+                <div
+                    id={`content-${id}`}
+                    role="region"
+                    aria-labelledby={`trigger-${id}`}
+                    className={styles.mobileExpanded}
+                >
                     <p className={styles.mobileTitle}>{title}</p>
                     <p className={styles.mobileDescription}>{description}</p>
                 </div>
             )}
-        </div>
+        </article>
     )
 })

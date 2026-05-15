@@ -3,6 +3,10 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { createMemoryHistory, createRouter, RouterProvider } from '@tanstack/react-router'
 import { routeTree } from '../routeTree.gen'
+import { axe } from 'vitest-axe'
+import * as vitestAxeMatchers from 'vitest-axe/matchers'
+
+expect.extend(vitestAxeMatchers)
 
 function renderExperience() {
   const memoryHistory = createMemoryHistory({ initialEntries: ['/experience'] })
@@ -54,5 +58,17 @@ describe('Experience page mobile accordion', () => {
     await user.click(buttons[0]) // close
     expect(buttons[0]).toHaveAttribute('aria-expanded', 'false')
     expect(buttons[0]).toHaveTextContent('[+]')
+  })
+})
+
+describe('Experience page accessibility', () => {
+  it('has no axe violations', async () => {
+    const memoryHistory = createMemoryHistory({ initialEntries: ['/experience'] })
+    const router = createRouter({ routeTree, history: memoryHistory })
+    const { container } = render(<RouterProvider router={router} />)
+    // Wait for async rendering
+    await screen.findAllByRole('button')
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })
