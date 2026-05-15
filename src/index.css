@@ -60,7 +60,6 @@ p {
 :focus-visible {
   outline: 3px solid var(--fg);
   outline-offset: 2px;
-  border-radius: 2px;
 }
 
 .sr-only {
