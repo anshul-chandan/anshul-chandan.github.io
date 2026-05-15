@@ -56,3 +56,38 @@ a, button {
 p {
   margin: 0;
 }
+
+:focus-visible {
+  outline: 3px solid var(--fg);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--spacing-xs);
+  z-index: 100;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--fg);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-body-sm);
+  text-decoration: none;
+}
+.skip-link:focus-visible {
+  top: var(--spacing-xs);
+  outline: none;
+}
