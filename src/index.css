@@ -77,7 +77,7 @@ p {
 
 .skip-link {
   position: absolute;
-  top: -100%;
+  top: -9999px;
   left: var(--spacing-xs);
   z-index: 100;
   padding: var(--spacing-xs) var(--spacing-sm);
@@ -89,5 +89,6 @@ p {
 }
 .skip-link:focus-visible {
   top: var(--spacing-xs);
-  outline: none;
+  outline: 3px solid var(--bg);
+  outline-offset: 2px;
 }
