@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
+import { useEffect } from 'react'
 import styles from './home.module.css'
 
 export const Route = createFileRoute('/')({
@@ -6,9 +7,10 @@ export const Route = createFileRoute('/')({
 })
 
 function HomePage() {
+    useEffect(() => { document.title = 'Anshul Chandan' }, [])
     return (
         <div className={styles.page}>
-            <div className={styles.header}>
+            <header className={styles.header}>
                 <h1 className={styles.name}>ANSHUL CHANDAN</h1>
                 <h1 className={styles.mobileName}>ANSHUL<br />CHANDAN</h1>
                 <p className={styles.subtitle}>
@@ -23,8 +25,8 @@ function HomePage() {
                 <p className={styles.mobileSubtitle}>
                     nyc based
                 </p>
-            </div>
-            <div className={styles.navArea}>
+            </header>
+            <main id="main-content" className={styles.navArea}>
                 <nav className={styles.nav}>
                     <Link to="/experience" className={styles.navLink}>
                         Experience
@@ -35,7 +37,7 @@ function HomePage() {
                         rel="noopener noreferrer"
                         className={styles.navLink}
                     >
-                        Photography
+                        Photography<span className="sr-only"> (opens in new tab)</span>
                     </a>
                     <a
                         href="https://linkedin.com/in/anshulchandan"
@@ -43,7 +45,7 @@ function HomePage() {
                         rel="noopener noreferrer"
                         className={styles.navLink}
                     >
-                        LinkedIn
+                        LinkedIn<span className="sr-only"> (opens in new tab)</span>
                     </a>
                     <a
                         href="https://github.com/anshul-chandan"
@@ -51,10 +53,10 @@ function HomePage() {
                         rel="noopener noreferrer"
                         className={styles.navLink}
                     >
-                        GitHub
+                        GitHub<span className="sr-only"> (opens in new tab)</span>
                     </a>
                 </nav>
-            </div>
+            </main>
         </div>
     )
 }
