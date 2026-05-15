@@ -10,15 +10,15 @@ interface Props {
 
 export const ExperienceEntry = memo(function ExperienceEntry({ company, dates, title, description }: Props) {
     return (
-        <div className={styles.entry}>
+        <article className={styles.entry}>
             <div className={styles.entryLeft}>
-                <p className={styles.company}>{company}</p>
+                <h2 className={styles.company}>{company}</h2>
                 <p className={styles.dates}>{dates}</p>
             </div>
             <div className={styles.entryRight}>
-                <p className={styles.title}>{title}</p>
+                <h3 className={styles.title}>{title}</h3>
                 <p className={styles.description}>{description}</p>
             </div>
-        </div>
+        </article>
     )
 })
